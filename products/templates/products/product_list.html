@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Product List{% endblock %}
+
+{% block content %}
+<h2>Products</h2>
+<div class="product-list">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{% url 'product_detail' product.id %}">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+            <img src="https://via.placeholder.com/150" alt="No image">
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            <p class="price">${{ product.final_price|floatformat:2 }}</p>
+        </a>
+    </div>
+    {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
+</div>
+{% endblock %}
