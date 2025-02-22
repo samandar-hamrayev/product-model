@@ -16,7 +16,7 @@
             <img src="https://via.placeholder.com/150" alt="No image">
             {% endif %}
             <h3>{{ product.name }}</h3>
-            <p class="price">${{ product.final_price|floatformat:2 }}</p>
+            <p class="price">{{ product.final_price|floatformat:2 }} so'm</p>
         </a>
     </div>
     {% empty %}

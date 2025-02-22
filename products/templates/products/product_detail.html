@@ -14,13 +14,13 @@
     {% endif %}
 
     <div class="product-info">
-        <p><strong>Price:</strong> ${{ product.final_price|floatformat:2 }}</p>
+        <p><strong>Price:</strong> {{ product.final_price|floatformat:2 }} so'm</p>
         <p><strong>Description:</strong> {{ product.description }}</p>
         <p><strong>Discount:</strong> {{ product.discount }}%</p>
         <p><strong>Created At:</strong> {{ product.created_at }}</p>
         <p><strong>Last Updated:</strong> {{ product.updated_at }}</p>
     </div>
 
-    <a href="{% url 'product_list' %}" class="btn">Back to Products</a>
+    <a href="{% url 'product_list' %}" class="btn">Productlarga qaytish</a>
 </div>
 {% endblock %}
